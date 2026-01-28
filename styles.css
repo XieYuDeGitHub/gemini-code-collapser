@@ -1,0 +1,114 @@
+/* =========================================
+   1. 代码块折叠功能样式 (保持不变)
+   ========================================= */
+pre.code-collapsed {
+  height: 0px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  border: none !important;
+}
+
+pre.code-collapsed + .gemini-code-placeholder {
+  display: block;
+}
+
+.gemini-collapse-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  margin-right: 4px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #444746;
+  transition: background-color 0.2s;
+  vertical-align: middle;
+}
+
+.gemini-collapse-btn:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.gemini-collapse-btn svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+/* 深色模式适配 */
+@media (prefers-color-scheme: dark) {
+  .gemini-collapse-btn { color: #c4c7c5; }
+  .gemini-collapse-btn:hover { background-color: #333; }
+}
+
+.gemini-code-placeholder {
+  display: none;
+  font-size: 12px;
+  color: #888;
+  padding: 4px 12px;
+  background-color: rgba(0,0,0,0.03);
+  border-radius: 0 0 8px 8px;
+  font-style: italic;
+}
+
+/* =========================================
+   2. 回到底部按钮样式 (修正位置和颜色)
+   ========================================= */
+#gemini-scroll-to-bottom {
+  position: fixed !important;
+  
+  /* --- 位置修正：屏幕右下角 --- */
+  left: auto !important;   /* 取消之前的居中 */
+  transform: none !important; /* 取消之前的位移 */
+  
+  right: 25px !important;  /* 距离右边框 25px */
+  bottom: 25px !important; /* 距离底边框 25px (和输入框高度大概对齐) */
+  
+  /* --- 颜色修正：强制蓝色 --- */
+  background-color: #1a73e8 !important; /* 谷歌蓝 */
+  color: white !important;
+  
+  /* 大小和形状 */
+  width: 45px !important;
+  height: 45px !important;
+  border-radius: 50% !important;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2) !important;
+  
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer !important;
+  z-index: 2147483647 !important; /* 确保在最上层 */
+  
+  transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+  
+  /* 默认显示状态 */
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: scale(1) !important;
+}
+
+/* 鼠标悬停变深 */
+#gemini-scroll-to-bottom:hover {
+  background-color: #1557b0 !important;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.3) !important;
+  transform: scale(1.1) !important;
+}
+
+/* --- 自动隐藏逻辑 --- */
+/* 当 JS 检测到已经在底部时，会添加这个类，让按钮消失 */
+#gemini-scroll-to-bottom.hidden-btn {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transform: scale(0.5) !important; /* 缩小消失 */
+  pointer-events: none !important;
+}
+
+#gemini-scroll-to-bottom svg {
+  width: 24px !important;
+  height: 24px !important;
+  fill: currentColor !important;
+}
