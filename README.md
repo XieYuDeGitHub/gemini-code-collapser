@@ -20,8 +20,6 @@
 <img width="1432" height="768" alt="回到底部按钮" src="https://github.com/user-attachments/assets/d2930a64-8f02-487a-9067-ca99bdc7f541" />
 <img width="1432" height="768" alt="代码块折叠按钮" src="https://github.com/user-attachments/assets/2e0b380d-a5c0-45d1-8091-8fa62f2a3cb5" />
 <img width="1432" height="768" alt="代码块折叠效果" src="https://github.com/user-attachments/assets/c10ec3c5-6302-425b-97e8-57e32df80293" />
-![代码折叠效果](screenshot1.png)
-![回到底部按钮](screenshot2.png)
 
 ## 🚀 安装方法 (Installation)
 
